@@ -10,6 +10,11 @@ public class Player_Controller : MonoBehaviour {
     public float maxForce=5;
     public float jumpForce = 6.5f;
     private bool jump;
+    public float x = 1;
+    public float y = 1;
+    public float z = 1;
+    public float lifes = 1f;
+    public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -52,6 +57,7 @@ public class Player_Controller : MonoBehaviour {
 
         if(jump){
             //definir que es un movimiento de fuerza
+            rbd2.velocity = new Vector2(rbd2.velocity.x, 0);
             rbd2.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jump = false;
         }
@@ -60,7 +66,14 @@ public class Player_Controller : MonoBehaviour {
     //detecta cuando se desaparece de la escena
 	private void OnBecameInvisible()
     {
-        
-        transform.position = new Vector3(-7.95f,-3.23f,0f);
+        transform.position = new Vector3(x,y,z);
+        if (lifes > 0)
+        {
+            lifes --;
+        }
+        else
+        {
+            Destroy(player);
+        }
 	}
 }

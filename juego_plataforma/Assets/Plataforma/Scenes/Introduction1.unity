@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activ: {fileID: 540023552}
+  box: 0
 --- !u!1001 &484376200
 Prefab:
   m_ObjectHideFlags: 0
@@ -826,6 +827,16 @@ Prefab:
     - target: {fileID: 1916292370996524, guid: 8b090b36bd9b54583bc8cd0444ec892c, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114045256484789638, guid: 8b090b36bd9b54583bc8cd0444ec892c,
+        type: 2}
+      propertyPath: x
+      value: -7.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 114045256484789638, guid: 8b090b36bd9b54583bc8cd0444ec892c,
+        type: 2}
+      propertyPath: y
+      value: -3.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b090b36bd9b54583bc8cd0444ec892c, type: 2}
