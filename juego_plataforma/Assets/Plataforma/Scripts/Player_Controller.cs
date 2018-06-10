@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Player_Controller : MonoBehaviour {
     public float velocidad=2f;
+
     private Rigidbody2D rbd2;
+
     public bool grounded;
     private Animator anim;
     public float maxForce=5;
     public float jumpForce = 6.5f;
     private bool jump;
+
     public float x = 1;
     public float y = 1;
     public float z = 1;
+
     public float lifes = 1f;
     public GameObject player;
+
+    private bool douJump;
 
 	// Use this for initialization
 	void Start () {
@@ -26,9 +32,24 @@ public class Player_Controller : MonoBehaviour {
 	void Update () {
         anim.SetFloat("Speed", Mathf.Abs(rbd2.velocity.x));
         anim.SetBool("Grounded", grounded);
+        //se guarda en un fotograma cuando esta dejandose caer puede volver a saltar salto de ayuda
+        if (grounded)
+        {
+            douJump = true;
+        }
+
         //GetKeyDown lo le solo una vez y no en cada fotograma
-        if(Input.GetKeyDown(KeyCode.UpArrow)&& grounded){
-            jump = true;
+        if(Input.GetKeyDown(KeyCode.UpArrow)){
+            //grounded=true , entonces que jump sea true y doujump true
+            if (grounded)
+            {
+                jump = true;
+                douJump = true;
+            }else if(douJump){
+                //si douJump es true, entonces que sea falsa y que jump sea true
+                jump = true;
+                douJump = false;
+        }
         }
 	}
 
@@ -48,9 +69,11 @@ public class Player_Controller : MonoBehaviour {
 
         float limitForce = Mathf.Clamp(rbd2.velocity.x,-maxForce,maxForce);
             rbd2.velocity = new Vector2(limitForce, rbd2.velocity.y);
+
         if( h > 0.1f){
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
+
         if(h < -0.1f){
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }

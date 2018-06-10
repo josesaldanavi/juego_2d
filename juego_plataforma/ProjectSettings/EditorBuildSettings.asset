@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Plataforma/Scenes/Introduction2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Plataforma/Scenes/IntroductionEnemy.unity
+    guid: c05e095ad5a8ec140960adaf1a9df871
   m_configObjects: {}
