@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Controller : MonoBehaviour {
     public float velocidad=2f;
@@ -97,6 +98,7 @@ public class Player_Controller : MonoBehaviour {
         else
         {
             Destroy(player);
+            SceneManager.LoadScene(0);
         }
 	}
 }
