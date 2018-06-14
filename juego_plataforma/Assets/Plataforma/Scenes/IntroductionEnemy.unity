@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 95124790}
   - component: {fileID: 95124789}
   - component: {fileID: 95124788}
+  - component: {fileID: 95124792}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -187,13 +188,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 95124787}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &95124792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 95124787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0fb952f5a3e8b4db4006575c853610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 940361280}
+  targetPoint: {x: 1, y: 1, z: -10}
 --- !u!1001 &120341753
 Prefab:
   m_ObjectHideFlags: 0
@@ -496,7 +510,7 @@ GameObject:
   - component: {fileID: 899390202}
   - component: {fileID: 899390201}
   m_Layer: 0
-  m_Name: sprites_20
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,6 +648,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c6a3425a487931439f6f65c7909c9b0, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &940361280 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4597514869231326, guid: 8b090b36bd9b54583bc8cd0444ec892c,
+    type: 2}
+  m_PrefabInternal: {fileID: 2029897671}
 --- !u!1 &1126042990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1077,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2055654815
 MonoBehaviour:
   m_ObjectHideFlags: 0
