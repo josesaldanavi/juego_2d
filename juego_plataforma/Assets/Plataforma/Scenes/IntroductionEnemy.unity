@@ -1089,3 +1089,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f0f9e3ad68b61459ed87daaeecb2a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 1
+  respawnDelay: 1
